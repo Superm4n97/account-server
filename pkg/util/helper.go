@@ -5,11 +5,10 @@ import (
 	"strconv"
 )
 
-func GetUniqueID(field *string) error {
+func GetUniqueID() (string, error) {
 	uid, err := uuid.NewUUID()
 	if err != nil {
-		return err
+		return "", err
 	}
-	*field = strconv.Itoa(int(uid.ID()))
-	return nil
+	return strconv.Itoa(int(uid.ID())), nil
 }
