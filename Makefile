@@ -1,7 +1,7 @@
-PORT := 8090
+PORT := ":8080"
 
 binary:
 	@go build ./cmd/account-server/*
 
-run-binary: binary
+run: binary
 	@./account-server --port $(PORT)
