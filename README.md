@@ -1,6 +1,10 @@
 # account-server
 `Cobra CLI` `gin` `MongoDB`
 
+## RUN APP
+
+
+## APIs
 ## user
 **CREATE**
 
@@ -17,13 +21,11 @@ Body Data:
 
 **GET**
 
-`[POST]`: `/api/v1/user`
+`[GET]`: `/api/v1/user`<br>
+`[GET]`: `/api/v1/user/:userid`
 <br>
-Body Data:
-```json
-{
-  "name": "admin",
-  "email": "admin@xyz",
-  "password": "1234"
-}
-```
+
+**DELETE**
+
+`[DELETE]`: `/api/v1/user/:userid`
+<br>
