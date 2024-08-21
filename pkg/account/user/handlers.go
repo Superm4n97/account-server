@@ -3,11 +3,12 @@ package user
 import (
 	"encoding/json"
 	"fmt"
+	"net/http"
+
 	"github.com/Superm4n97/account-server/pkg/database/mongodb"
 	"github.com/Superm4n97/account-server/pkg/util"
 	"github.com/gin-gonic/gin"
 	"k8s.io/klog/v2"
-	"net/http"
 )
 
 const (
@@ -56,14 +57,14 @@ func CreateUser(ctx *gin.Context) {
 		return
 	}
 
-	uid, err := mongodb.Add(u, collectionUser)
+	_, err = mongodb.Add(u, collectionUser)
 	if err != nil {
 		klog.Error(err.Error())
 		ctx.IndentedJSON(http.StatusInternalServerError, err.Error())
 		return
 	}
 
-	klog.Infof("user successfully inserted with userid %s", uid)
+	klog.Infof("user successfully inserted with userid %s", u.ID)
 	ctx.IndentedJSON(http.StatusOK, "user added successfully")
 }
 
