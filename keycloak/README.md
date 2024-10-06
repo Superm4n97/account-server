@@ -38,3 +38,5 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main
 ```bash
 helm install keycloak keycloak
 ```
+## visit
+visit https://localhost/admin/master/console/ to view the admin console, and use default username:password `admin`:`admin`
